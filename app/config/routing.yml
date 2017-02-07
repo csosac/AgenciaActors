@@ -1,3 +1,11 @@
+agencia_actors_frontend:
+    resource: "@AgenciaActorsFrontendBundle/Resources/config/routing.yml"
+    prefix:   /
+
+agencia_actors_backend:
+    resource: "@AgenciaActorsBackendBundle/Resources/config/routing.yml"
+    prefix:   /
+
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation

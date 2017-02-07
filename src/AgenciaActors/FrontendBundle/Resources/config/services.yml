@@ -1,0 +1,4 @@
+services:
+#    agencia_actors_frontend.example:
+#        class: AgenciaActors\FrontendBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]
