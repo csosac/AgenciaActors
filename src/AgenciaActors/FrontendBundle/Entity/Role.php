@@ -29,11 +29,12 @@ class Role
     private $nifActor;
 
     /**
-     * @var int
      *
-     * @ORM\Column(name="idFilm", type="integer", nullable=true)
+     * @ORM\ManyToOne(targetEntity="film", inversedBy="role")
+     * @ORM\JoinColumn(name="idFilm", referencedColumnName="id")
      */
-    private $idFilm;
+    protected $idFilm;
+
 
     /**
      * @var string
@@ -75,30 +76,6 @@ class Role
     public function getNifActor()
     {
         return $this->nifActor;
-    }
-
-    /**
-     * Set idFilm
-     *
-     * @param integer $idFilm
-     *
-     * @return Role
-     */
-    public function setIdFilm($idFilm)
-    {
-        $this->idFilm = $idFilm;
-
-        return $this;
-    }
-
-    /**
-     * Get idFilm
-     *
-     * @return int
-     */
-    public function getIdFilm()
-    {
-        return $this->idFilm;
     }
 
     /**

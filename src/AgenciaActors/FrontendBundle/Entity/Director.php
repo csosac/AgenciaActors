@@ -44,6 +44,16 @@ class Director
 
 
     /**
+     * @ORM\OneToMany(targetEntity="Film", mappedBy="director")
+     */
+    protected $films;
+
+    public function __construct()
+    {
+        $this->films = new ArrayCollection();
+    }
+
+    /**
      * Get id
      *
      * @return int

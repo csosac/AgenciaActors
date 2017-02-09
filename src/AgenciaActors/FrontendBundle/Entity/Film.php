@@ -63,6 +63,23 @@ class Film
      */
     private $endDate;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="Director", inversedBy="film")
+     * @ORM\JoinColumn(name="directorId", referencedColumnName="id")
+     */
+    protected $idDirector;
+
+
+    /**
+     * @ORM\OneToMany(targetEntity="Role", mappedBy="film")
+     */
+    protected $roles;
+
+    public function __construct()
+    {
+        $this->roles = new ArrayCollection();
+    }
+
 
     /**
      * Get id

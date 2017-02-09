@@ -58,6 +58,16 @@ class Actor
 
 
     /**
+     * @ORM\OneToMany(targetEntity="Role", mappedBy="actor")
+     */
+    protected $roles;
+
+    public function __construct()
+    {
+        $this->roles = new ArrayCollection();
+    }
+
+    /**
      * Get id
      *
      * @return int
