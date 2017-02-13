@@ -23,14 +23,14 @@ class Role
 
     /**
      *
-     * @ORM\ManyToOne(targetEntity="actor", inversedBy="role")
+     * @ORM\ManyToOne(targetEntity="Actor", inversedBy="role")
      * @ORM\JoinColumn(name="nifActor", referencedColumnName="nif")
      */
     private $nifActor;
 
     /**
      *
-     * @ORM\ManyToOne(targetEntity="film", inversedBy="role")
+     * @ORM\ManyToOne(targetEntity="Film", inversedBy="role")
      * @ORM\JoinColumn(name="idFilm", referencedColumnName="id")
      */
     protected $idFilm;

@@ -1,0 +1,17 @@
+{% extends "AgenciaActorsFrontendBundle:Default:index.html.twig " %}
+{% block title %}Pelicules{% endblock %}
+{% block page_content %}
+    <!-- Page Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-lg-12 col-md-12">
+                <h4 class="">Llistat de pelicules</h4>
+            </div>
+            {% for peli in films %}
+                <div class="col-sm-12 col-lg-12 col-md-12">
+                    <p>{{ peli.name }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

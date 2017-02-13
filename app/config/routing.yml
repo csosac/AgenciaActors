@@ -1,10 +1,10 @@
 agencia_actors_frontend:
     resource: "@AgenciaActorsFrontendBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /agencia
 
 agencia_actors_backend:
     resource: "@AgenciaActorsBackendBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /agencia/backend
 
 app:
     resource: "@AppBundle/Controller/"

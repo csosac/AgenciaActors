@@ -1,3 +1,15 @@
 agencia_actors_frontend_homepage:
     path:     /
     defaults: { _controller: AgenciaActorsFrontendBundle:Default:index }
+
+agencia_actors_frontend_actor:
+    path:     /actor
+    defaults: { _controller: AgenciaActorsFrontendBundle:Actor:index }
+
+agencia_actors_frontend_directors:
+    path:     /director
+    defaults: { _controller: AgenciaActorsFrontendBundle:Directors:index }
+
+agencia_actors_frontend_films:
+    path:     /film
+    defaults: { _controller: AgenciaActorsFrontendBundle:Films:index }
