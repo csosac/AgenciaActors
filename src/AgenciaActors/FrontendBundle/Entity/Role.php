@@ -22,9 +22,9 @@ class Role
     private $id;
 
     /**
-     * @var string
      *
-     * @ORM\Column(name="nifActor", type="string", length=20, nullable=true)
+     * @ORM\ManyToOne(targetEntity="actor", inversedBy="role")
+     * @ORM\JoinColumn(name="nifActor", referencedColumnName="nif")
      */
     private $nifActor;
 
@@ -52,30 +52,6 @@ class Role
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * Set nifActor
-     *
-     * @param string $nifActor
-     *
-     * @return Role
-     */
-    public function setNifActor($nifActor)
-    {
-        $this->nifActor = $nifActor;
-
-        return $this;
-    }
-
-    /**
-     * Get nifActor
-     *
-     * @return string
-     */
-    public function getNifActor()
-    {
-        return $this->nifActor;
     }
 
     /**
