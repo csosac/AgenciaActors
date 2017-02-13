@@ -1,3 +1,12 @@
 agencia_actors_backend_homepage:
     path:     /
     defaults: { _controller: AgenciaActorsBackendBundle:Default:index }
+
+agencia_actors_backend_director:
+    path:     /directors
+    defaults: { _controller: AgenciaActorsBackendBundle:Directors:index }
+
+
+agencia_actors_backend_add_director:
+    path:     /add-director
+    defaults: { _controller: AgenciaActorsBackendBundle:Directors:addDirector }

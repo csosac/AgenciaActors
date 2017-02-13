@@ -1,0 +1,18 @@
+{% extends "AgenciaActorsBackendBundle:Default:index.html.twig " %}
+{% block title %}BACKEND - Afegir Director{% endblock %}
+{% block page_content %}
+    <!-- Page Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-lg-12 col-md-12">
+                <h4 class="">{{ titol }}</h4>
+            </div>
+            <div class="col-sm-12 col-lg-12 col-md-12">
+                {# {{ form(form) }} #}
+                {{ form_start(form) }}
+                {{ form_widget(form) }}
+                {{ form_end(form) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}

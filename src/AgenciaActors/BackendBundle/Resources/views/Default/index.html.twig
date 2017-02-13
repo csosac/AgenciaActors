@@ -1,1 +1,86 @@
-Hello World!
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Benvingut al nostre BACKEND de la Agencia!{% endblock %}</title>
+    {% block stylesheets %}
+        <!-- Bootstrap Core CSS -->
+        <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
+
+        <!-- Custom CSS -->
+        <link href="{{ asset('css/agencia-homepage.css') }}" rel="stylesheet">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    {% endblock %}
+</head>
+
+<body>
+    {% block body %}
+        {% block navigation %}
+            <!-- Navigation -->
+            <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+                <div class="container">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="{{ path('agencia_actors_backend_homepage') }}">Directors - BACKEND</a>
+                    </div>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+                            <li>
+                                <a href="{{ path('agencia_actors_backend_director') }}">Directors</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- /.navbar-collapse -->
+                </div>
+                <!-- /.container -->
+            </nav>
+        {% endblock %}
+
+        {% block page_content %}
+            <!-- Page Content -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                    	<h4>BACKEND - Manteniment de la botiga.</h4>
+                    	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc feugiat neque dolor, non rhoncus nulla molestie sagittis. Mauris quis tortor viverra, sollicitudin lectus id, tempor risus. Sed tempus rutrum diam fringilla iaculis. Quisque mollis elit eget ex venenatis, vel pretium ipsum aliquet. Nulla convallis scelerisque metus quis tempus. Cras vestibulum imperdiet neque. Vestibulum in tortor lorem. Pellentesque lobortis orci vel euismod placerat. Aenean congue lacus urna, vel interdum orci lobortis et. Sed nunc nibh, mollis nec justo id, egestas placerat velit. Ut nec dapibus arcu. Suspendisse fringilla ultricies velit, in pharetra lacus commodo ut. Nullam tincidunt malesuada velit, quis elementum lacus tristique eget. Etiam non dolor tempor, cursus massa sit amet, vestibulum massa.</p>
+                    	<p>Ut pharetra dolor leo, sed faucibus nunc pharetra ut. Pellentesque in nibh malesuada, vulputate urna non, tincidunt nisi. Nam sodales justo justo, dictum accumsan libero auctor a. Donec eu interdum nisl. Vestibulum vitae sem tincidunt, posuere mi nec, vehicula augue. Praesent nibh sem, porta id lobortis et, viverra ac urna. Nullam cursus diam sed justo tristique, eleifend pellentesque sem dapibus. Integer eu neque aliquet, blandit ipsum commodo, fringilla magna. Nunc ultricies diam risus, et fermentum est semper ut. Fusce molestie hendrerit lectus, vitae varius justo tincidunt vel. Pellentesque sit amet purus vehicula, venenatis libero id, tempor elit. Vestibulum ac massa faucibus, interdum mauris quis, vulputate risus.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- /.container -->
+        {% endblock %}
+
+        <div class="container">
+            <hr>
+            <!-- Footer -->
+            <footer>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <p>Copyright &copy; Your Website 2017</p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <!-- /.container -->
+    {% endblock %}
+
+    {% block javascripts %}
+        <!-- jQuery -->
+        <script src="{{ asset('js/jquery.js') }}"></script>
+
+        <!-- Bootstrap Core JavaScript -->
+        <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+    {% endblock %}
+
+</body>
+
+</html>
