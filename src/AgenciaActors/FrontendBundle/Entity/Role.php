@@ -24,16 +24,16 @@ class Role
     /**
      *
      * @ORM\ManyToOne(targetEntity="Actor", inversedBy="role")
-     * @ORM\JoinColumn(name="nifActor", referencedColumnName="nif")
+     * @ORM\JoinColumn(name="actorId", referencedColumnName="id")
      */
-    private $nifActor;
+    protected $actor;
 
     /**
      *
      * @ORM\ManyToOne(targetEntity="Film", inversedBy="role")
-     * @ORM\JoinColumn(name="idFilm", referencedColumnName="id")
+     * @ORM\JoinColumn(name="filmId", referencedColumnName="id")
      */
-    protected $idFilm;
+    protected $film;
 
 
     /**
@@ -77,5 +77,44 @@ class Role
     {
         return $this->role;
     }
+
+       /**
+     * @param Actor|null $actor
+     * @return $this
+     */
+    public function setActor(Actor $actor = null)
+    {
+        $this->actor = $actor;
+ 
+        return $this;
+    }
+ 
+    /**
+     * @return actor
+     */
+    public function getActor()
+    {
+        return $this->actor;
+    }
+ 
+        /**
+     * @param Film|null $pelicula
+     * @return $this
+     */
+    public function setFilm(Film $pelicula = null)
+    {
+        $this->film = $pelicula;
+ 
+        return $this;
+    }
+ 
+    /**
+     * @return pelicula
+     */
+    public function getFilm()
+    {
+        return $this->film;
+    }
+ 
 }
 

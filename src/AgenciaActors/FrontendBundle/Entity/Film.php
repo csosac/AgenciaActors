@@ -51,16 +51,16 @@ class Film
     private $type;
 
     /**
-     * @var string
+     * @var \DateTime
      *
-     * @ORM\Column(name="startDate", type="string", length=255, nullable=true)
+     * @ORM\Column(name="startDate", type="date", nullable=true)
      */
     private $startDate;
 
     /**
-     * @var string
+     * @var \DateTime
      *
-     * @ORM\Column(name="endDate", type="string", length=255, nullable=true)
+     * @ORM\Column(name="endDate", type="date", nullable=true)
      */
     private $endDate;
 
@@ -68,7 +68,7 @@ class Film
      * @ORM\ManyToOne(targetEntity="Director", inversedBy="film")
      * @ORM\JoinColumn(name="directorId", referencedColumnName="id")
      */
-    protected $idDirector;
+    protected $director;
 
 
     /**
@@ -191,7 +191,7 @@ class Film
     /**
      * Set startDate
      *
-     * @param string $startDate
+     * @param date $startDate
      *
      * @return Film
      */
@@ -205,7 +205,7 @@ class Film
     /**
      * Get startDate
      *
-     * @return string
+     * @return date
      */
     public function getStartDate()
     {
@@ -215,7 +215,7 @@ class Film
     /**
      * Set endDate
      *
-     * @param string $endDate
+     * @param date $endDate
      *
      * @return Film
      */
@@ -229,11 +229,32 @@ class Film
     /**
      * Get endDate
      *
-     * @return string
+     * @return date
      */
     public function getEndDate()
     {
         return $this->endDate;
     }
+
+
+    /**
+     * @param Director|null $director
+     * @return $this
+     */
+    public function setDirector(Director $director = null)
+    {
+        $this->director = $director;
+ 
+        return $this;
+    }
+ 
+    /**
+     * @return director
+     */
+    public function getDirector()
+    {
+        return $this->director;
+    }
+ 
 }
 

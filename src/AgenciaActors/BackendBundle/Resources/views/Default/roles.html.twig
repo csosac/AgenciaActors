@@ -1,0 +1,30 @@
+{% extends "AgenciaActorsBackendBundle:Default:index.html.twig " %}
+{% block title %}Papers dels actors en les pelicules{% endblock %}
+{% block page_content %}
+    <h4>{{ titol }}</h4>
+    <table id="mytable" class="table table-bordred table-striped">
+        <thead>
+            <th>Pelicula</th>
+            <th>Paper</th>
+            <th>Actor</th>
+            <th>Editar</th>
+            <th>Eliminar</th>
+        </thead>
+        <tbody>
+            {% for role in roles %}
+                <tr>
+                    <td>{{ role.film.name|upper }}</td>
+                    <td>{{ role.role|upper }}</td>
+                    <td>{{ role.actor.name|upper }}</td>
+                    <td><p data-placement="top" data-toggle="tooltip" title="Editar"><a href="{{ path('agencia_actors_backend_update_role', {'id': role.id }) }}" class="btn btn-primary btn-sm" data-title="Editar"  data-target="#edit"/><span class="fa fa-pencil fa-2x"></span></p></td>
+                    <td><p data-placement="top" data-toggle="tooltip" title="Eliminar"><a href="{{ path('agencia_actors_backend_delete_role', {'id': role.id }) }}"><button class="btn btn-danger btn-sm" data-title="Eliminar" data-toggle="modal" data-target="#delete" ><span class="fa fa-trash-o fa-2x"></span></button></a></p></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <div class="row">
+        <div class="col-sm-12 col-lg-12 col-md-12">
+            <a href="{{ path('agencia_actors_backend_add_role') }}" class="btn btn-info" role="button">Afegir Paper</a>
+        </div>
+    </div>
+{% endblock %}

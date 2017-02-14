@@ -1,0 +1,34 @@
+{% extends "AgenciaActorsBackendBundle:Default:index.html.twig " %}
+{% block title %}Categories{% endblock %}
+{% block page_content %}
+    <h4>{{ titol }}</h4>
+    <table id="mytable" class="table table-bordred table-striped">
+        <thead>
+            <th>NIF</th>
+            <th>Nom</th>
+            <th>Cognom</th>
+            <th>Sexe</th>
+            <th>URL de la foto</th>
+            <th>Editar</th>
+            <th>Eliminar</th>
+        </thead>
+        <tbody>
+            {% for actor in actors %}
+                <tr>
+                    <td>{{ actor.nif|upper }}</td>
+                    <td>{{ actor.name|upper }}</td>
+                    <td>{{ actor.lastName|upper }}</td>
+                    <td>{{ actor.genre|upper }}</td>
+                    <td>{{ actor.photoURL|upper }}</td>
+                    <td><p data-placement="top" data-toggle="tooltip" title="Editar"><a href="{{ path('agencia_actors_backend_update_actor', {'id': actor.id }) }}" class="btn btn-primary btn-sm" data-title="Editar"  data-target="#edit"/><span class="fa fa-pencil fa-2x"></span></p></td>
+                    <td><p data-placement="top" data-toggle="tooltip" title="Eliminar"><a href="{{ path('agencia_actors_backend_delete_actor', {'id': actor.id }) }}"><button class="btn btn-danger btn-sm" data-title="Eliminar" data-toggle="modal" data-target="#delete" ><span class="fa fa-trash-o fa-2x"></span></button></a></p></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <div class="row">
+        <div class="col-sm-12 col-lg-12 col-md-12">
+            <a href="{{ path('agencia_actors_backend_add_actor') }}" class="btn btn-info" role="button">Afegir actor</a>
+        </div>
+    </div>
+{% endblock %}

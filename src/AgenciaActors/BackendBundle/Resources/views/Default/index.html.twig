@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% block title %}Benvingut al nostre BACKEND de la Agencia!{% endblock %}</title>
     {% block stylesheets %}
-        <!-- Bootstrap Core CSS -->
-        <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
+        <!-- Bootstrap Core CSS -->       
+         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"/>
 
         <!-- Custom CSS -->
         <link href="{{ asset('css/agencia-homepage.css') }}" rel="stylesheet">
@@ -37,6 +38,15 @@
                             <li>
                                 <a href="{{ path('agencia_actors_backend_director') }}">Directors</a>
                             </li>
+                            <li>
+                                <a href="{{ path('agencia_actors_backend_actor') }}">Actors</a>
+                            </li>
+                            <li>
+                                <a href="{{ path('agencia_actors_backend_film') }}">Pelicules</a>
+                            </li>
+                            <li>
+                                <a href="{{ path('agencia_actors_backend_role') }}">Paper en les pelicules</a>
+                            </li>
                         </ul>
                     </div>
                     <!-- /.navbar-collapse -->
@@ -50,9 +60,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                    	<h4>BACKEND - Manteniment de la botiga.</h4>
-                    	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc feugiat neque dolor, non rhoncus nulla molestie sagittis. Mauris quis tortor viverra, sollicitudin lectus id, tempor risus. Sed tempus rutrum diam fringilla iaculis. Quisque mollis elit eget ex venenatis, vel pretium ipsum aliquet. Nulla convallis scelerisque metus quis tempus. Cras vestibulum imperdiet neque. Vestibulum in tortor lorem. Pellentesque lobortis orci vel euismod placerat. Aenean congue lacus urna, vel interdum orci lobortis et. Sed nunc nibh, mollis nec justo id, egestas placerat velit. Ut nec dapibus arcu. Suspendisse fringilla ultricies velit, in pharetra lacus commodo ut. Nullam tincidunt malesuada velit, quis elementum lacus tristique eget. Etiam non dolor tempor, cursus massa sit amet, vestibulum massa.</p>
-                    	<p>Ut pharetra dolor leo, sed faucibus nunc pharetra ut. Pellentesque in nibh malesuada, vulputate urna non, tincidunt nisi. Nam sodales justo justo, dictum accumsan libero auctor a. Donec eu interdum nisl. Vestibulum vitae sem tincidunt, posuere mi nec, vehicula augue. Praesent nibh sem, porta id lobortis et, viverra ac urna. Nullam cursus diam sed justo tristique, eleifend pellentesque sem dapibus. Integer eu neque aliquet, blandit ipsum commodo, fringilla magna. Nunc ultricies diam risus, et fermentum est semper ut. Fusce molestie hendrerit lectus, vitae varius justo tincidunt vel. Pellentesque sit amet purus vehicula, venenatis libero id, tempor elit. Vestibulum ac massa faucibus, interdum mauris quis, vulputate risus.</p>
+                    	<h4>BACKEND - Manteniment de la nostra agencia.</h4>
+                    	<p>Aqui tens un manteniment per a totes les seccions de la nostra agencia. També es pot adjudicar papers a actors/pelicules, i pelicules a directors</p>
                     </div>
                 </div>
             </div>
@@ -65,7 +74,7 @@
             <footer>
                 <div class="row">
                     <div class="col-lg-12">
-                        <p>Copyright &copy; Your Website 2017</p>
+                        <p>Copyright &copy; La meva agencia d'actors 2017</p>
                     </div>
                 </div>
             </footer>

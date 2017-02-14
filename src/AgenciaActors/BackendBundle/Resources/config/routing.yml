@@ -10,3 +10,61 @@ agencia_actors_backend_director:
 agencia_actors_backend_add_director:
     path:     /add-director
     defaults: { _controller: AgenciaActorsBackendBundle:Directors:addDirector }
+
+agencia_actors_backend_update_director:
+    path:     /update-director/{id}
+    defaults: { _controller: AgenciaActorsBackendBundle:Directors:updateDirector }
+
+agencia_actors_backend_delete_director:
+    path:     /delete-director/{id}
+    defaults: { _controller: AgenciaActorsBackendBundle:Directors:deleteDirector }
+
+
+agencia_actors_backend_actor:
+    path:     /actors
+    defaults: { _controller: AgenciaActorsBackendBundle:Actors:index }
+
+
+agencia_actors_backend_add_actor:
+    path:     /add-actor
+    defaults: { _controller: AgenciaActorsBackendBundle:Actors:addActor }
+
+agencia_actors_backend_update_actor:
+    path:     /update-actor/{id}
+    defaults: { _controller: AgenciaActorsBackendBundle:Actors:updateActor }
+
+agencia_actors_backend_delete_actor:
+    path:     /delete-actor/{id}
+    defaults: { _controller: AgenciaActorsBackendBundle:Actors:deleteActor}
+
+agencia_actors_backend_film:
+    path:     /films
+    defaults: { _controller: AgenciaActorsBackendBundle:Films:index }
+
+agencia_actors_backend_add_film:
+    path:     /add-film
+    defaults: { _controller: AgenciaActorsBackendBundle:Films:addFilm}
+
+agencia_actors_backend_update_film:
+    path:     /update-film/{id}
+    defaults: { _controller: AgenciaActorsBackendBundle:Films:updateFilm}
+
+agencia_actors_backend_delete_film:
+    path:     /delete-film/{id}
+    defaults: { _controller: AgenciaActorsBackendBundle:Films:deleteFilm}
+
+agencia_actors_backend_role:
+    path:     /roles
+    defaults: { _controller: AgenciaActorsBackendBundle:Roles:index}
+
+agencia_actors_backend_add_role:
+    path:     /add-role
+    defaults: { _controller: AgenciaActorsBackendBundle:Roles:addRole}
+
+agencia_actors_backend_update_role:
+    path:     /update-role/{id}
+    defaults: { _controller: AgenciaActorsBackendBundle:Roles:updateRole}
+
+agencia_actors_backend_delete_role:
+    path:     /delete-role/{id}
+    defaults: { _controller: AgenciaActorsBackendBundle:Roles:deleteRole}
