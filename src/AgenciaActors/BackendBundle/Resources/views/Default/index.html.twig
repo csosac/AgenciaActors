@@ -23,6 +23,7 @@
 </head>
 
 <body>
+
     {% block body %}
         {% block navigation %}
             <!-- Navigation -->
@@ -47,6 +48,12 @@
                             <li>
                                 <a href="{{ path('agencia_actors_backend_role') }}">Paper en les pelicules</a>
                             </li>
+
+                            {% if is_granted('ROLE_ADMIN') %}
+                                <li><a href="{{ path('logout') }}">Logout</a></li>
+                            {% else %}
+                                <li><a href="{{ path('login') }}">Login</a></li>
+                            {% endif %}
                         </ul>
                     </div>
                     <!-- /.navbar-collapse -->
@@ -54,20 +61,18 @@
                 <!-- /.container -->
             </nav>
         {% endblock %}
-
-        {% block page_content %}
-            <!-- Page Content -->
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                    	<h4>BACKEND - Manteniment de la nostra agencia.</h4>
-                    	<p>Aqui tens un manteniment per a totes les seccions de la nostra agencia. També es pot adjudicar papers a actors/pelicules, i pelicules a directors</p>
+            {% block page_content %}
+                <!-- Page Content -->
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                        	<h4>BACKEND - Manteniment de la nostra agencia.</h4>
+                        	<p>Aqui tens un manteniment per a totes les seccions de la nostra agencia. També es pot adjudicar papers a actors/pelicules, i pelicules a directors</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <!-- /.container -->
-        {% endblock %}
-
+                <!-- /.container -->
+            {% endblock %}
         <div class="container">
             <hr>
             <!-- Footer -->

@@ -9,3 +9,14 @@ agencia_actors_backend:
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation
+
+login:
+    path:     /login
+    defaults: { _controller: AgenciaActorsBackendBundle:Security:login }
+ 
+login_check:
+    path: /login_check
+    
+logout:
+    path: /logout
+

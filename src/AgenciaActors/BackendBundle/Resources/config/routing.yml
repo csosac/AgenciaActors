@@ -19,11 +19,9 @@ agencia_actors_backend_delete_director:
     path:     /delete-director/{id}
     defaults: { _controller: AgenciaActorsBackendBundle:Directors:deleteDirector }
 
-
 agencia_actors_backend_actor:
     path:     /actors
     defaults: { _controller: AgenciaActorsBackendBundle:Actors:index }
-
 
 agencia_actors_backend_add_actor:
     path:     /add-actor
@@ -68,3 +66,7 @@ agencia_actors_backend_update_role:
 agencia_actors_backend_delete_role:
     path:     /delete-role/{id}
     defaults: { _controller: AgenciaActorsBackendBundle:Roles:deleteRole}
+
+agencia_actors_backend_user_registration:
+    path:     /register
+    defaults: { _controller: AgenciaActorsBackendBundle:Registration:register}
