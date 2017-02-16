@@ -23,13 +23,6 @@ class Film
     private $id;
 
     /**
-     * @var int
-     *
-     * @ORM\Column(name="idFilm", type="integer", unique=true)
-     */
-    private $idFilm;
-
-    /**
      * @var string
      *
      * @ORM\Column(name="name", type="string", length=255, nullable=true)
@@ -96,30 +89,6 @@ class Film
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * Set idFilm
-     *
-     * @param integer $idFilm
-     *
-     * @return Film
-     */
-    public function setIdFilm($idFilm)
-    {
-        $this->idFilm = $idFilm;
-
-        return $this;
-    }
-
-    /**
-     * Get idFilm
-     *
-     * @return int
-     */
-    public function getIdFilm()
-    {
-        return $this->idFilm;
     }
 
     /**

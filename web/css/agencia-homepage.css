@@ -9,8 +9,7 @@ body {
 }
 
 .slide-image {
-    width: 800px;
-    height: 300px;
+    width: 100%;
 }
 
 .carousel-holder {
@@ -23,7 +22,6 @@ body {
 }
 
 .caption {
-    height: 130px;
     overflow: hidden;
 }
 

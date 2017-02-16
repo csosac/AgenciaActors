@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% block title %}Benvingut a la Agencia d'actors!{% endblock %}</title>
     {% block stylesheets %}
-        <!-- Bootstrap Core CSS -->
-        <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
+        <!-- Bootstrap Core CSS --> 
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"/>
 
         <!--Custom CSS-->
         <link href="{{ asset('css/agencia-homepage.css') }}" rel="stylesheet">
@@ -78,13 +79,13 @@
                                     </ol>
                                     <div class="carousel-inner">
                                         <div class="item active">
-                                            <img class="slide-image" src="http://img2.wikia.nocookie.net/__cb20101208171110/harrypotter/images/0/0e/Philostone.jpg" alt="Harry Potter y la piedra Filosofal">
+                                            <img class="slide-image" src="{{ asset('photos/BANNER_HARRY_1.png') }}" alt="Harry Potter y la piedra Filosofal">
                                         </div>
                                         <div class="item">
-                                            <img class="slide-image" src="https://i.jeded.com/i/harry-potter-and-the-chamber-of-secrets.12466.jpg" alt="Harry Potter y la camara de los secretos">
+                                            <img class="slide-image" src="{{ asset('photos/BANNER_HARRY_2.png') }}" alt="Harry Potter y la camara de los secretos">
                                         </div>
                                         <div class="item">
-                                            <img class="slide-image" src="http://loremflickr.com/800/300/music" alt="">
+                                            <img class="slide-image" src="{{ asset('photos/BANNER_HARRY_3.png') }}" alt="">
                                         </div>
                                     </div>
                                     <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
@@ -98,16 +99,19 @@
                         </div>
 
                         <div class="row">
+                            {% for peli in films %}
                             <div class="col-sm-4 col-lg-4 col-md-4">
                                 <div class="thumbnail">
+                                    <div class="cartel">
+                                    <img src="{{ peli.photoURL }}" class="img-rounded img-responsive">
+                                    </div>
                                     <div class="caption">
                                         <h4 class="pull-right">$24.99</h4>
-                                        <h4><a href="#">First Product</a>
+                                        <h4><a href="#">{{ peli.name }}</a>
                                         </h4>
-                                        <p>See more snippets like this online store item at <a target="_blank" href="http://www.bootsnipp.com">Bootsnipp - http://bootsnipp.com</a>.</p>
+                                        <p>{{ peli.description }}</a>.</p>
                                     </div>
                                     <div class="ratings">
-                                        <p class="pull-right">15 reviews</p>
                                         <p>
                                             <span class="glyphicon glyphicon-star"></span>
                                             <span class="glyphicon glyphicon-star"></span>
@@ -118,97 +122,7 @@
                                     </div>
                                 </div>
                             </div>
-
-                            <div class="col-sm-4 col-lg-4 col-md-4">
-                                <div class="thumbnail">
-                                    <div class="caption">
-                                        <h4 class="pull-right">$64.99</h4>
-                                        <h4><a href="#">Second Product</a>
-                                        </h4>
-                                        <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                    </div>
-                                    <div class="ratings">
-                                        <p class="pull-right">12 reviews</p>
-                                        <p>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                            <span class="glyphicon glyphicon-star-empty"></span>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-sm-4 col-lg-4 col-md-4">
-                                <div class="thumbnail">
-                                    <div class="caption">
-                                        <h4 class="pull-right">$74.99</h4>
-                                        <h4><a href="#">Third Product</a>
-                                        </h4>
-                                        <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                    </div>
-                                    <div class="ratings">
-                                        <p class="pull-right">31 reviews</p>
-                                        <p>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                            <span class="glyphicon glyphicon-star-empty"></span>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-sm-4 col-lg-4 col-md-4">
-                                <div class="thumbnail">
-                                    <div class="caption">
-                                        <h4 class="pull-right">$84.99</h4>
-                                        <h4><a href="#">Fourth Product</a>
-                                        </h4>
-                                        <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                    </div>
-                                    <div class="ratings">
-                                        <p class="pull-right">6 reviews</p>
-                                        <p>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                            <span class="glyphicon glyphicon-star-empty"></span>
-                                            <span class="glyphicon glyphicon-star-empty"></span>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-sm-4 col-lg-4 col-md-4">
-                                <div class="thumbnail">
-                                    <div class="caption">
-                                        <h4 class="pull-right">$94.99</h4>
-                                        <h4><a href="#">Fifth Product</a>
-                                        </h4>
-                                        <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                    </div>
-                                    <div class="ratings">
-                                        <p class="pull-right">18 reviews</p>
-                                        <p>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                            <span class="glyphicon glyphicon-star-empty"></span>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-sm-4 col-lg-4 col-md-4">
-                                <h4><a href="#">Like this template?</a>
-                                </h4>
-                                <p>If you like this template, then check out <a target="_blank" href="http://maxoffsky.com/code-blog/laravel-shop-tutorial-1-building-a-review-system/">this tutorial</a> on how to build a working review system for your online store!</p>
-                                <a class="btn btn-primary" target="_blank" href="http://maxoffsky.com/code-blog/laravel-shop-tutorial-1-building-a-review-system/">View Tutorial</a>
-                            </div>
+                            {% endfor %}
                         </div>
                     </div>
                 </div>
@@ -231,11 +145,10 @@
     {% endblock %}
 
     {% block javascripts %}
-        <!-- jQuery -->
-        <script src="{{ asset('js/jquery.js') }}"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
-        <!-- Bootstrap Core JavaScript -->
-        <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
     {% endblock %}
 
 </body>

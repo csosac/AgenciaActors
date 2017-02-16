@@ -8,7 +8,6 @@
             <th>Nom</th>
             <th>Cognom</th>
             <th>Sexe</th>
-            <th>URL de la foto</th>
             <th>Editar</th>
             <th>Eliminar</th>
         </thead>
@@ -19,7 +18,6 @@
                     <td>{{ actor.name|upper }}</td>
                     <td>{{ actor.lastName|upper }}</td>
                     <td>{{ actor.genre|upper }}</td>
-                    <td>{{ actor.photoURL|upper }}</td>
                     <td><p data-placement="top" data-toggle="tooltip" title="Editar"><a href="{{ path('agencia_actors_backend_update_actor', {'id': actor.id }) }}" class="btn btn-primary btn-sm" data-title="Editar"  data-target="#edit"/><span class="fa fa-pencil fa-2x"></span></p></td>
                     <td><p data-placement="top" data-toggle="tooltip" title="Eliminar"><a href="{{ path('agencia_actors_backend_delete_actor', {'id': actor.id }) }}"><button class="btn btn-danger btn-sm" data-title="Eliminar" data-toggle="modal" data-target="#delete" ><span class="fa fa-trash-o fa-2x"></span></button></a></p></td>
                 </tr>

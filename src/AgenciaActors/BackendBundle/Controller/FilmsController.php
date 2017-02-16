@@ -30,13 +30,13 @@ class FilmsController extends Controller
         $film = new Film();
 
         $form = $this->createFormBuilder($film)
-            ->add('idFilm', IntegerType::class, array('label' => 'Codi de pelicula'))
             ->add('name', TextType::class, array('label' => 'Nom'))
             ->add('description', TextType::class, array('label' => 'Descripcio'))
             ->add('type', TextType::class, array('label' => 'Tipo'))
             ->add('startDate', DateType::class, array('placeholder' => array('label' => 'Data d\'inici','year' => 'Any', 'month' => 'Mes', 'dia' => 'Day'),'label' =>'Data d\'inici'))
             ->add('endDate', DateType::class, array('placeholder' => array('year' => 'Any', 'month' => 'Mes', 'dia' => 'Day'),'label' =>'Data final'))
-             ->add('director', EntityType::class, array(
+            ->add('photoURL', TextType::class, array('label' => 'Url de la foto'))
+            ->add('director', EntityType::class, array(
                 'class' => 'AgenciaActorsFrontendBundle:Director',
                 'choice_label' => 'name',
                 'multiple' => FALSE
@@ -76,12 +76,12 @@ class FilmsController extends Controller
         $film = $this->getDoctrine()->getRepository('AgenciaActorsFrontendBundle:Film')->find($id);
  
         $form = $this->createFormBuilder($film)
-            ->add('idFilm', IntegerType::class, array('label' => 'Codi de pelicula'))
             ->add('name', TextType::class, array('label' => 'Nom'))
             ->add('description', TextType::class, array('label' => 'Descripcio'))
             ->add('type', TextType::class, array('label' => 'Tipo'))
             ->add('startDate', DateType::class, array('placeholder' => array('label' => 'Data d\'inici','year' => 'Any', 'month' => 'Mes', 'dia' => 'Day'),'label' =>'Data d\'inici'))
             ->add('endDate', DateType::class, array('placeholder' => array('year' => 'Any', 'month' => 'Mes', 'dia' => 'Day'),'label' =>'Data final'))
+            ->add('photoURL', TextType::class, array('label' => 'Url de la foto'))
             ->add('director', EntityType::class, array(
                 'class' => 'AgenciaActorsFrontendBundle:Director',
                 'choice_label' => 'name',

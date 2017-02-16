@@ -8,6 +8,9 @@ class DefaultController extends Controller
 {
     public function indexAction()
     {
-        return $this->render('AgenciaActorsFrontendBundle:Default:index.html.twig');
+    	$films = $this->getDoctrine()->getRepository('AgenciaActorsFrontendBundle:Film')->findAll();
+    	
+        return $this->render('AgenciaActorsFrontendBundle:Default:index.html.twig', array(
+        	'films' => $films));
     }
 }

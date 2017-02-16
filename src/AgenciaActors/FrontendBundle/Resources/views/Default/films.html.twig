@@ -1,6 +1,8 @@
 {% extends "AgenciaActorsFrontendBundle:Default:index.html.twig " %}
 {% block title %}Pelicules{% endblock %}
 {% block page_content %}
+
+
     <!-- Page Content -->
     <div class="container">
         <div class="row">
@@ -8,8 +10,27 @@
                 <h4 class="">Llistat de pelicules</h4>
             </div>
             {% for peli in films %}
-                <div class="col-sm-12 col-lg-12 col-md-12">
-                    <p>{{ peli.name }}</p>
+                <div class="col-sm-4 col-lg-4 col-md-4">
+                    <div class="thumbnail">
+                        <div class="cartel">
+                            <img src="{{ peli.photoURL }}" class="img-rounded img-responsive">
+                        </div>
+                        <div class="caption">
+                            <h4><a href="#">{{ peli.name }}</a></h4>
+                            <p>{{ peli.description }}</a></p>
+                            <h3> Director: </h3> {{ peli.director.name }}{{ peli.director.lastname }}
+                            <h3> Actors: </h3> 
+                        </div>
+                        <div class="ratings">
+                            <p>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star"></span>
+                            </p>
+                        </div>
+                    </div>
                 </div>
             {% endfor %}
         </div>

@@ -9,6 +9,7 @@
             <th>Tipus</th>
             <th>Data d'inici</th>
             <th>Data Final</th>
+            <th>Portada pelicula</th>
             <th>Nom del Director</th>
             <th>Modificar</th>
             <th>Eliminar</th>
@@ -21,6 +22,7 @@
                     <td>{{ film.type|upper }}</td>
                     <td>{{ film.startDate|date('Y-m-d') }}</td>
                     <td>{{ film.endDate|date('Y-m-d') }}</td>
+                    <td>{{ film.photoURL }}</td>
                     <td>{{ film.director.name|upper }}</td>
                     <td><p data-placement="top" data-toggle="tooltip" title="Editar"><a href="{{ path('agencia_actors_backend_update_film', {'id': film.id }) }}" class="btn btn-primary btn-sm" data-title="Editar"  data-target="#edit"/><span class="fa fa-pencil fa-2x"></span></p></td>
                     <td><p data-placement="top" data-toggle="tooltip" title="Eliminar"><a href="{{ path('agencia_actors_backend_delete_film', {'id': film.id }) }}"><button class="btn btn-danger btn-sm" data-title="Eliminar" data-toggle="modal" data-target="#delete" ><span class="fa fa-trash-o fa-2x"></span></button></a></p></td>

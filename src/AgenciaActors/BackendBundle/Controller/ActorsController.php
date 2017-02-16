@@ -33,7 +33,6 @@ class ActorsController extends Controller
             ->add('name', TextType::class, array('label' => 'Nom'))
             ->add('lastname', TextType::class, array('label' => 'Cognom'))
             ->add('genre', ChoiceType::class, array('choices'=> array('Dona' => 'female', 'Home' => 'male'),'label' => 'Sexe'))
-            ->add('photoURL', TextType::class, array('label' => 'Url de la foto'))
             ->add('save', SubmitType::class, array('label' => 'Crear Actor'))
             ->getForm();
 
@@ -73,7 +72,6 @@ class ActorsController extends Controller
             ->add('name', TextType::class, array('label' => 'Nom'))
             ->add('lastname', TextType::class, array('label' => 'Cognom'))
             ->add('genre', ChoiceType::class, array('choices'=> array('Dona' => 'female', 'Home' => 'male'),'label' => 'Sexe'))
-            ->add('photoURL', TextType::class, array('label' => 'Url de la foto'))
             ->add('save', SubmitType::class, array('label' => 'Modificar Actor'))
             ->getForm();
 
