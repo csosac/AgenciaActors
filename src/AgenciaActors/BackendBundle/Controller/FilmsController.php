@@ -34,7 +34,7 @@ class FilmsController extends Controller
             ->add('description', TextType::class, array('label' => 'Descripcio'))
             ->add('type', TextType::class, array('label' => 'Tipo'))
             ->add('startDate', DateType::class, array('placeholder' => array('label' => 'Data d\'inici','year' => 'Any', 'month' => 'Mes', 'dia' => 'Day'),'label' =>'Data d\'inici'))
-            ->add('endDate', DateType::class, array('placeholder' => array('year' => 'Any', 'month' => 'Mes', 'dia' => 'Day'),'label' =>'Data final'))
+            ->add('endDate', DateType::class, array('label' =>'Data final','placeholder' => array('year' => 'Any', 'month' => 'Mes', 'dia' => 'Day')))
             ->add('photoURL', TextType::class, array('label' => 'Url de la foto'))
             ->add('director', EntityType::class, array(
                 'class' => 'AgenciaActorsFrontendBundle:Director',
