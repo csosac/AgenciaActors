@@ -28,7 +28,6 @@ security:
               target: /agencia
 
     access_control:
-        # require ROLE_ADMIN for /admin*
         - { path: ^/agencia/backend/register, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/agencia/backend, roles: ROLE_ADMIN }
         
