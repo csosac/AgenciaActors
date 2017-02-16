@@ -31,9 +31,8 @@ class User implements UserInterface
     private $username;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="plainpassword", type="string", length=255)
+     * @Assert\NotBlank()
+     * @Assert\Length(max=4096)
      */
     private $plainpassword;
 
@@ -43,6 +42,13 @@ class User implements UserInterface
      * @ORM\Column(name="password", type="string", length=255)
      */
     private $password;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="role", type="string", length=255, nullable=true)
+     */
+    private $role;
 
 
     /**
@@ -142,6 +148,30 @@ class User implements UserInterface
     public function eraseCredentials()
     {
         return null;
+    }
+
+   /**
+     * Get role
+     *
+     * @return string
+     */
+    public function getRole()
+    {
+        return $this->role;
+    }
+
+    /**
+     * Set role
+     *
+     * @param string $role
+     *
+     * @return role
+     */
+    public function setRole($role)
+    {
+        $this->role = $role;
+
+        return $this;
     }
 }
 
