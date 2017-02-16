@@ -9,9 +9,10 @@ class DirectorsController extends Controller
     public function indexAction()
     {
     	$directors = $this->getDoctrine()->getRepository('AgenciaActorsFrontendBundle:Director')->findAll();
+        $pelis = $this->getDoctrine()->getRepository('AgenciaActorsFrontendBundle:Film')->findAll();
 
         return $this->render('AgenciaActorsFrontendBundle:Default:director.html.twig', array(
-        	'directors' => $directors));
+        	'directors' => $directors, 'pelis' => $pelis));
     }
 
     public function direcotrAction($id)
