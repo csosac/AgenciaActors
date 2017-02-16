@@ -13,12 +13,6 @@
         <!--Custom CSS-->
         <link href="{{ asset('css/agencia-homepage.css') }}" rel="stylesheet">
 
-        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-        <![endif]-->
     {% endblock %}
 </head>
 
@@ -106,8 +100,7 @@
                                     <img src="{{ peli.photoURL }}" class="img-rounded img-responsive">
                                     </div>
                                     <div class="caption">
-                                        <h4 class="pull-right">$24.99</h4>
-                                        <h4><a href="#">{{ peli.name }}</a>
+                                        <h4><a href="{{ path('agencia_actors_frontend_film', {'id': peli.getId() }) }}">{{ peli.name }}</a>
                                         </h4>
                                         <p>{{ peli.description }}</a>.</p>
                                     </div>

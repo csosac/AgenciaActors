@@ -50,12 +50,7 @@ class Actor
      */
     private $genre;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="photoURL", type="string", length=255, nullable=true)
-     */
-    private $photoURL;
+    
 
 
     /**
@@ -174,28 +169,6 @@ class Actor
         return $this->genre;
     }
 
-    /**
-     * Set photoURL
-     *
-     * @param string $photoURL
-     *
-     * @return Actor
-     */
-    public function setPhotoURL($photoURL)
-    {
-        $this->photoURL = $photoURL;
 
-        return $this;
-    }
-
-    /**
-     * Get photoURL
-     *
-     * @return string
-     */
-    public function getPhotoURL()
-    {
-        return $this->photoURL;
-    }
 }
 

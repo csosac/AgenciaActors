@@ -13,3 +13,7 @@ agencia_actors_frontend_directors:
 agencia_actors_frontend_films:
     path:     /film
     defaults: { _controller: AgenciaActorsFrontendBundle:Films:index }
+
+agencia_actors_frontend_film:
+    path:     /film/{id}
+    defaults: { _controller: AgenciaActorsFrontendBundle:Films:film }
