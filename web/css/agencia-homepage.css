@@ -51,3 +51,14 @@ body {
 footer {
     margin: 50px 0;
 }
+
+#form>div>label{
+    width: 10%;
+}
+
+#form>div>select{
+    width: 10%;
+}
+
+
+

@@ -26,14 +26,14 @@ class ActorsController extends Controller
     {
         // crea una categoria y le asigna algunos datos ficticios para este ejemplo
         $actor = new Actor();
-        // $category->setName('tato');
  
         $form = $this->createFormBuilder($actor)
             ->add('nif', TextType::class, array('label' => 'NIF'))
             ->add('name', TextType::class, array('label' => 'Nom'))
             ->add('lastname', TextType::class, array('label' => 'Cognom'))
             ->add('genre', ChoiceType::class, array('choices'=> array('Dona' => 'female', 'Home' => 'male'),'label' => 'Sexe'))
-            ->add('save', SubmitType::class, array('label' => 'Crear Actor'))
+            ->add('save', SubmitType::class, array('label' => 'Crear Actor','attr' => array(
+                        'class' => 'btn btn-primary')))
             ->getForm();
 
         $form->handleRequest($request);
@@ -72,7 +72,8 @@ class ActorsController extends Controller
             ->add('name', TextType::class, array('label' => 'Nom'))
             ->add('lastname', TextType::class, array('label' => 'Cognom'))
             ->add('genre', ChoiceType::class, array('choices'=> array('Dona' => 'female', 'Home' => 'male'),'label' => 'Sexe'))
-            ->add('save', SubmitType::class, array('label' => 'Modificar Actor'))
+            ->add('save', SubmitType::class, array('label' => 'Modificar Actor','attr' => array(
+                        'class' => 'btn btn-primary')))
             ->getForm();
 
         $form->handleRequest($request);
