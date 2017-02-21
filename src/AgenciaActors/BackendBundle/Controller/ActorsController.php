@@ -28,12 +28,24 @@ class ActorsController extends Controller
         $actor = new Actor();
  
         $form = $this->createFormBuilder($actor)
-            ->add('nif', TextType::class, array('label' => 'NIF'))
-            ->add('name', TextType::class, array('label' => 'Nom'))
-            ->add('lastname', TextType::class, array('label' => 'Cognom'))
-            ->add('genre', ChoiceType::class, array('choices'=> array('Dona' => 'female', 'Home' => 'male'),'label' => 'Sexe'))
+            ->add('nif', TextType::class, array('label' => 'NIF','label_attr'=> array(
+                        'class' => 'label_text spaceTop'), 'attr' => array(
+                        'class' => 'form-control')))
+            ->add('name', TextType::class, array('label' => 'Nom','label_attr'=> array(
+                        'class' => 'label_text spaceTop'), 'attr' => array(
+                        'class' => 'form-control')))
+            ->add('lastname', TextType::class, array('label' => 'Cognom','label_attr'=> array(
+                        'class' => 'label_text spaceTop'), 'attr' => array(
+                        'class' => 'form-control')))
+            ->add(
+                    'genre', 
+                    ChoiceType::class, 
+                    array('choices'=> array('Dona' => 'female', 'Home' => 'male'),
+                    'label' => 'Sexe',
+                    'label_attr'=> array('class' => 'label_text spaceTop'), 
+                    'attr' => array('class' => 'form-control')))
             ->add('save', SubmitType::class, array('label' => 'Crear Actor','attr' => array(
-                        'class' => 'btn btn-primary')))
+                        'class' => 'btn btn-primary spaceTop')))
             ->getForm();
 
         $form->handleRequest($request);

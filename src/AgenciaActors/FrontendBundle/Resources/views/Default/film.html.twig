@@ -6,15 +6,15 @@
         <div class="row">
             {% for film in films %}
             <div class="col-sm-12 col-lg-12 col-md-12">
-                <h4>{{ film.getName() }}</h4>
+                <h2>{{ film.getName() }}</h2>
             </div>
                 <div class="col-sm-12 col-lg-12 col-md-12">
                     <div class="thumbnail">
-                        <div class="cartel">
-                            <img src="{{ film.getPhotoURL() }}" class="img-rounded img-responsive">
+                        <div>
+                            <img src="{{ film.getPhotoURL() }}" class="img-rounded img-responsive cartelPeli">
                         </div>
                         <div class="caption">
-                            <p>{{ film.description }}</a></p>
+                            <p class="text-justify">{{ film.description }}</a></p>
                             <h3> Director: </h3> {{ film.director.name }} {{ film.director.lastname }}
                             <h3> Actors: </h3> 
                             {% for rol in roles %}

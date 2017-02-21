@@ -13,7 +13,7 @@
                         -Pelicules:
                     {% for peli in pelis %}
                         {% if peli.getDirector().getName() == director.getName() %}
-                        <p><a href="">{{peli.getName()}}</a></p>
+                        <p><a href="{{ path('agencia_actors_frontend_film', {'id': peli.getId() }) }}">{{peli.getName()}}</a></p>
                         {% endif %}
                     {% endfor %}
                 </div>

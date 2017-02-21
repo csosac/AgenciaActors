@@ -8,8 +8,62 @@ body {
     padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
 }
 
+img {
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 576px) { 
+    .cartelPeli{
+        max-height: 400px !important;
+        max-width: 200px !important;
+    }
+}
+@media screen and (min-width: 577px) { 
+    .cartelPeli{
+        max-height: 300px !important;
+        max-width: 200px !important;
+    }
+}
+@media screen and (min-width: 768px) { 
+   .cartel{
+    max-height: 450px !important;}
+    .cartelPeli{
+        max-height: 400px !important;
+        max-width: 300px !important;
+    }
+}
+@media screen and (min-width: 992px) { 
+   .cartel{
+    max-height: 450px !important;
+    }
+    .cartelPeli{
+        max-height: 400px! important;
+        max-width: 300px! important;
+    }
+}
+@media screen and (min-width: 1200px) { 
+    .cartel{
+    max-height: 400px !important;}
+    .cartelPeli{
+        max-height: 400px! important;
+        max-width: 300px! important;
+    }
+}
+
+.label_text{    
+    font-family: inherit;
+    font-size:25px;
+    font-weight: 500;
+    line-height: 1.1;
+    color: inherit;
+}
+
 .slide-image {
     width: 100%;
+}
+
+.spaceTop{
+    margin-top: 15px;
 }
 
 .carousel-holder {
@@ -50,14 +104,6 @@ body {
 
 footer {
     margin: 50px 0;
-}
-
-#form>div>label{
-    width: 10%;
-}
-
-#form>div>select{
-    width: 10%;
 }
 
 
