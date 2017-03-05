@@ -30,18 +30,45 @@ class FilmsController extends Controller
         $film = new Film();
 
         $form = $this->createFormBuilder($film)
-            ->add('name', TextType::class, array('label' => 'Nom'))
-            ->add('description', TextType::class, array('label' => 'Descripcio'))
-            ->add('type', TextType::class, array('label' => 'Tipo'))
-            ->add('startDate', DateType::class, array('placeholder' => array('label' => 'Data d\'inici','year' => 'Any', 'month' => 'Mes', 'dia' => 'Day'),'label' =>'Data d\'inici'))
-            ->add('endDate', DateType::class, array('label' =>'Data final','placeholder' => array('year' => 'Any', 'month' => 'Mes', 'dia' => 'Day')))
-            ->add('photoURL', TextType::class, array('label' => 'Url de la foto'))
+            ->add('name', 
+                TextType::class, 
+                array('label' => 'Nom',
+                    'label_attr'=> array('class' => 'label_text spaceTop'), 
+                    'attr' => array('class' => 'form-control')))
+
+
+
+            ->add('description', TextType::class, array('label' => 'Descripcio',
+                    'label_attr'=> array('class' => 'label_text spaceTop'), 
+                    'attr' => array('class' => 'form-control')))
+            ->add('type', TextType::class, array('label' => 'Tipo',
+                'label_attr'=> array('class' => 'label_text spaceTop'), 
+                'attr' => array('class' => 'form-control')))
+            ->add('startDate', DateType::class, array(
+                    'label' => 'Data Inici',
+                    'widget' => 'single_text',
+                    'html5' => false,
+                    'format' => 'dd/MM/yyyy',
+                    'attr' => ['class' => 'js-datepicker form-control'],
+                    'label_attr'=> array('class' => 'label_text spaceTop')))
+            ->add('endDate', DateType::class, array(
+                    'label' =>'Data final',
+                    'widget' => 'single_text',
+                    'html5' => false,
+                    'format' => 'dd/MM/yyyy',
+                    'attr' => ['class' => 'js-datepicker form-control'],
+                    'label_attr'=> array('class' => 'label_text spaceTop')))
+            ->add('photoURL', TextType::class, array('label' => 'Url de la foto',
+                    'label_attr'=> array('class' => 'label_text spaceTop'), 
+                    'attr' => array('class' => 'form-control')))
             ->add('director', EntityType::class, array(
                 'class' => 'AgenciaActorsFrontendBundle:Director',
                 'choice_label' => 'name',
-                'multiple' => FALSE
-            ))
-            ->add('save', SubmitType::class, array('label' => 'Crear Film'))
+                'multiple' => FALSE,
+                'label_attr'=> array('class' => 'label_text spaceTop'), 
+                'attr' => array('class' => 'form-control')))
+            ->add('save', SubmitType::class, array('label' => 'Crear Film','attr' => array(
+                        'class' => 'btn btn-primary spaceTop')))
             ->getForm();
 
 
@@ -76,18 +103,40 @@ class FilmsController extends Controller
         $film = $this->getDoctrine()->getRepository('AgenciaActorsFrontendBundle:Film')->find($id);
  
         $form = $this->createFormBuilder($film)
-            ->add('name', TextType::class, array('label' => 'Nom'))
-            ->add('description', TextType::class, array('label' => 'Descripcio'))
-            ->add('type', TextType::class, array('label' => 'Tipo'))
-            ->add('startDate', DateType::class, array('placeholder' => array('label' => 'Data d\'inici','year' => 'Any', 'month' => 'Mes', 'dia' => 'Day'),'label' =>'Data d\'inici'))
-            ->add('endDate', DateType::class, array('placeholder' => array('year' => 'Any', 'month' => 'Mes', 'dia' => 'Day'),'label' =>'Data final'))
-            ->add('photoURL', TextType::class, array('label' => 'Url de la foto'))
+            ->add('name', TextType::class, array('label' => 'Nom',
+                    'label_attr'=> array('class' => 'label_text spaceTop'), 
+                    'attr' => array('class' => 'form-control')))
+            ->add('description', TextType::class, array('label' => 'Descripcio',
+                    'label_attr'=> array('class' => 'label_text spaceTop'), 
+                    'attr' => array('class' => 'form-control')))
+            ->add('type', TextType::class, array('label' => 'Tipo',
+                    'label_attr'=> array('class' => 'label_text spaceTop'), 
+                    'attr' => array('class' => 'form-control')))
+            ->add('startDate', DateType::class, array(
+                    'label' => 'Data Inici',
+                    'widget' => 'single_text',
+                    'html5' => false,
+                    'format' => 'dd/MM/yyyy',
+                    'attr' => ['class' => 'js-datepicker form-control'],
+                    'label_attr'=> array('class' => 'label_text spaceTop')))
+            ->add('endDate', DateType::class, array(
+                    'label' =>'Data final',
+                    'widget' => 'single_text',
+                    'html5' => false,
+                    'format' => 'dd/MM/yyyy',
+                    'attr' => ['class' => 'js-datepicker form-control'],
+                    'label_attr'=> array('class' => 'label_text spaceTop')))
+            ->add('photoURL', TextType::class, array('label' => 'Url de la foto',
+                    'label_attr'=> array('class' => 'label_text spaceTop'), 
+                    'attr' => array('class' => 'form-control')))
             ->add('director', EntityType::class, array(
                 'class' => 'AgenciaActorsFrontendBundle:Director',
                 'choice_label' => 'name',
-                'multiple' => FALSE
-            ))
-            ->add('save', SubmitType::class, array('label' => 'Modificar Film'))
+                'multiple' => FALSE,
+                'label_attr'=> array('class' => 'label_text spaceTop'), 
+                'attr' => array('class' => 'form-control')))
+            ->add('save', SubmitType::class, array('label' => 'Modificar Film','attr' => array(
+                        'class' => 'btn btn-primary spaceTop')))
             ->getForm();
 
         $form->handleRequest($request);

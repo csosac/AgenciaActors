@@ -31,15 +31,20 @@ class RolesController extends Controller
             ->add('film', EntityType::class, array(
                 'class' => 'AgenciaActorsFrontendBundle:Film',
                 'choice_label' => 'name',
-                'multiple' => FALSE
-            ))
-            ->add('role', TextType::class, array('label' => 'Nom del paper'))
+                'multiple' => FALSE,
+                'label_attr'=> array('class' => 'label_text spaceTop'), 
+                'attr' => array('class' => 'form-control')))
+            ->add('role', TextType::class, array('label' => 'Nom del paper',
+                'label_attr'=> array('class' => 'label_text spaceTop'), 
+                'attr' => array('class' => 'form-control')))
             ->add('actor', EntityType::class, array(
                 'class' => 'AgenciaActorsFrontendBundle:Actor',
                 'choice_label' => 'name',
-                'multiple' => FALSE
-            ))
-            ->add('save', SubmitType::class, array('label' => 'Crear Role'))
+                'multiple' => FALSE,
+                'label_attr'=> array('class' => 'label_text spaceTop'), 
+                'attr' => array('class' => 'form-control')))
+            ->add('save', SubmitType::class, array('label' => 'Crear Role','attr' => array(
+                        'class' => 'btn btn-primary spaceTop')))
             ->getForm();
 
         $form->handleRequest($request);
@@ -77,15 +82,20 @@ class RolesController extends Controller
             ->add('film', EntityType::class, array(
                 'class' => 'AgenciaActorsFrontendBundle:Film',
                 'choice_label' => 'name',
-                'multiple' => FALSE
-            ))
-            ->add('role', TextType::class, array('label' => 'Nom del paper'))
+                'multiple' => FALSE,
+                'label_attr'=> array('class' => 'label_text spaceTop'), 
+                'attr' => array('class' => 'form-control')))
+            ->add('role', TextType::class, array('label' => 'Nom del paper',
+                'label_attr'=> array('class' => 'label_text spaceTop'), 
+                'attr' => array('class' => 'form-control')))
             ->add('actor', EntityType::class, array(
                 'class' => 'AgenciaActorsFrontendBundle:Actor',
                 'choice_label' => 'name',
-                'multiple' => FALSE
-            ))
-            ->add('save', SubmitType::class, array('label' => 'Modificar Role'))
+                'multiple' => FALSE,
+                'label_attr'=> array('class' => 'label_text spaceTop'), 
+                'attr' => array('class' => 'form-control')))
+            ->add('save', SubmitType::class, array('label' => 'Modificar Role','attr' => array(
+                        'class' => 'btn btn-primary spaceTop')))
             ->getForm();
 
         $form->handleRequest($request);

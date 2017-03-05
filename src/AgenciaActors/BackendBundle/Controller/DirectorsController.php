@@ -27,10 +27,17 @@ class DirectorsController extends Controller
         // $category->setName('tato');
  
         $form = $this->createFormBuilder($director)
-            ->add('nif', TextType::class, array('label' => 'NIF'))
-            ->add('name', TextType::class, array('label' => 'Nom'))
-            ->add('lastname', TextType::class, array('label' => 'Cognom'))
-            ->add('save', SubmitType::class, array('label' => 'Crear Director'))
+            ->add('nif', TextType::class, array('label' => 'NIF','attr' => array(
+                        'class' => 'form-control'),
+                    'label_attr'=> array('class' => 'label_text spaceTop')))
+            ->add('name', TextType::class, array('label' => 'Nom','attr' => array(
+                        'class' => 'form-control'),
+                    'label_attr'=> array('class' => 'label_text spaceTop')))
+            ->add('lastname', TextType::class, array('label' => 'Cognom',
+                'attr' => array('class' => 'form-control'),
+                'label_attr'=> array('class' => 'label_text spaceTop')))
+            ->add('save', SubmitType::class, array('label' => 'Crear Director' ,'attr' => array(
+                        'class' => 'btn btn-primary spaceTop')))
             ->getForm();
 
         $form->handleRequest($request);
@@ -65,10 +72,17 @@ class DirectorsController extends Controller
 
  
         $form = $this->createFormBuilder($director)
-            ->add('nif', TextType::class, array('label' => 'NIF'))
-            ->add('name', TextType::class, array('label' => 'Nom'))
-            ->add('lastname', TextType::class, array('label' => 'Cognom'))
-            ->add('save', SubmitType::class, array('label' => 'Modificar Director'))
+            ->add('nif', TextType::class, array('label' => 'NIF',
+                    'label_attr'=> array('class' => 'label_text spaceTop'),'attr' => array(
+                        'class' => 'form-control')))
+            ->add('name', TextType::class, array('label' => 'Nom',
+                    'label_attr'=> array('class' => 'label_text spaceTop'),'attr' => array(
+                        'class' => 'form-control')))
+            ->add('lastname', TextType::class, array('label' => 'Cognom',
+                    'label_attr'=> array('class' => 'label_text spaceTop'),'attr' => array(
+                        'class' => 'form-control')))
+            ->add('save', SubmitType::class, array('label' => 'Modificar Director','attr' => array(
+                        'class' => 'btn btn-primary spaceTop')))
             ->getForm();
 
         $form->handleRequest($request);
